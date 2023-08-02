@@ -55,7 +55,7 @@ public class ViewEmployee extends JFrame implements ActionListener{
             table.setModel(DbUtils.resultSetToTableModel(rs));
             
         } catch (Exception e) {
-            e.printStackTrace();;
+            e.printStackTrace();
         }
         
         JScrollPane jsp = new JScrollPane(table);
@@ -107,7 +107,8 @@ public class ViewEmployee extends JFrame implements ActionListener{
                 e.printStackTrace();
             }
         } else if(ae.getSource() == update){
-            
+            setVisible(false);
+            new UpdateEmployee(cEmpId.getSelectedItem());
         } else {
             setVisible(false);
             new Home();
